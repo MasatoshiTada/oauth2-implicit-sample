@@ -1,0 +1,19 @@
+server.port: 8090
+
+spring.jackson:
+  date-format: com.fasterxml.jackson.databind.util.StdDateFormat
+  time-zone: Asia/Tokyo
+  property-naming-strategy: SNAKE_CASE
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000/auth/realms/hello-api
+
+logging:
+  level:
+    com.example.resourceserveropaque: debug
+    org.springframework:
+      security: trace
